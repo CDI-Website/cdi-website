@@ -1,0 +1,55 @@
+/* =================================================================================
+~ Layout
+================================================================================= */
+
+.main-container-wrapper {
+	background: $color-background;
+}
+
+.main-container {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@media screen and (min-width: $screen-md) {
+		padding-top: 60px;
+		padding-bottom: 60px;	
+	}
+
+	.page-node-type-page &,
+	.path-explore &,
+	.path-theme-explorer & {
+		@media screen and (min-width: $screen-md) {
+			background: url( ../images/bg-page.png ) right top no-repeat;
+		}
+	}
+
+	.page-node-type-page &,
+	.path-explore & {
+		@media screen and (min-width: $screen-md) {
+			padding-right: 280px;
+		}
+	}
+}
+
+.page-header {
+	.page-node-type-page &,
+	.path-explore & {
+		@media screen and (min-width: $screen-md) {
+			padding-right: 250px;
+		}
+	}
+}
+
+.path-contact .main-container-inner, 
+.page-node-type-article .main-container-inner,
+.entity-container {
+	@media screen and (min-width: $screen-sm) {
+		background: $white;
+		border: 1px solid $gray-lightest;
+	}
+
+	@media screen and (min-width: $screen-md) {
+		margin: 0 auto;
+		width: 85%;
+	}
+}

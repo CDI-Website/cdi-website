@@ -1,0 +1,15 @@
+#header-search-input {
+  border: none;
+  width: 0;
+  -webkit-transition: width .5s;
+  -moz-transition: width .5s;
+  transition: width .5s;
+  overflow:hidden;
+}
+#header-search-input:focus {
+  width: 200px;
+}
+
+#navigation-container{
+  text-align:right;
+}

@@ -1,0 +1,12 @@
+theme_explorer:
+  js:
+   js/contrib/d3.min.js: { minified: true }
+   js/contrib/d3_context_menu.js: {}
+   js/contrib/jquery.blockui.js: {}
+   js/custom/Tree.js: {}
+  css:
+    component:
+      css/styles.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

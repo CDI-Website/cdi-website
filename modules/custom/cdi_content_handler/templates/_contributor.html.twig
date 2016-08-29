@@ -1,0 +1,14 @@
+{% if contributor.person.display_name %}
+  <a href="/content{{ contributor.person_uri }}">
+    {{ contributor.person.display_name }}
+    {% if contributor.person.orcid %}
+      (orcid: {{ contributor.person.orcid }})
+    {% endif %}
+  </a>
+{% endif %}
+{% if contributor.person.display_name and contributor.organization.display_name %}
+  -
+{% endif %}
+{% if contributor.organization.display_name %}
+  <a href="/content{{ contributor.organization_uri }}">{{ contributor.organization.display_name }}</a>
+{% endif %}

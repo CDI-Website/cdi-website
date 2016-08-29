@@ -1,0 +1,7 @@
+name: Faceted Searching
+type: module
+description: Search through CDI data using filters
+package: Custom
+core: 8.x
+libraries:
+  - faceted_search/faceted_search

@@ -1,0 +1,77 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates
+ */
+function nasa_cdi_preprocess_block( &$variables ) {
+	// Change site logo extension to png
+	switch ( $variables['base_plugin_id'] ) {
+		case 'system_branding_block':
+			$variables['site_logo'] = '';
+
+			if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+				$variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+			}
+
+			break;
+	}
+
+	// Add additional classes to blocks
+	switch( $variables['plugin_id'] ) {
+		case 'system_menu_block:footer':
+			$variables['attributes']['class'][] = 'footer-nav';
+			break;
+		case 'block_content:05cf28a3-826c-49c6-bc1a-c9a38ad0d888':
+			$variables['attributes']['class'][] = 'footer-address';
+			break;
+		case 'block_content:ed5827cd-55a6-4f3e-b6f9-97059af669cf':
+			$variables['attributes']['class'][] = 'footer-phone';
+			break;
+	}
+}
+
+/**
+ * Removes the preview button from contact forms
+ */
+function nasa_cdi_form_alter( &$form, $form_state, $form_id ) {  
+	$form['actions']['preview']['#access'] = FALSE;
+
+	if ( $form_id == 'contact_message_feedback_form' || $form_id == 'contact_message_report_data_form' ) {
+		$form['actions']['submit']['#submit'][] = 'nasa_cdi_contact_submit';
+	}
+}
+
+/**
+ * Adds a class to article teasers that have a featured image
+ */
+function nasa_cdi_preprocess_node__article( &$variables ) {
+	if( $variables['view_mode'] == 'teaser' && isset( $variables['content']['field_image'][0] ) ) {
+		$variables['attributes']['class'][] = 'featured-article-has-image';
+	}
+}
+
+/**
+ * Adds variables to the page title template
+ */
+function nasa_cdi_preprocess_page_title( &$variables ) {
+	$node = \Drupal::request()->attributes->get('node');
+
+	if( $node && $node->getType() == 'article' ) {
+		$variables['date'] = \Drupal::service('date.formatter')->format( $node->getCreatedTime(), 'custom', 'F d, Y' );
+	}
+}
+
+/**
+ * Contact form submit handler
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function nasa_cdi_contact_submit(&$form, $form_state, $form_id ) {
+	$form_state->setRedirect('contact.site_page');
+}

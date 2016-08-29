@@ -1,0 +1,56 @@
+/* =================================================================================
+Variables
+================================================================================= */
+
+// Colors
+$black:					#000;
+$gray-darker:           lighten(#000, 13.5%); // #222
+$gray-dark:             lighten(#000, 20%);   // #333
+$gray:                  lighten(#000, 33.5%); // #555
+$gray-light:            lighten(#000, 60%);   // #999
+$gray-lighter:			lighten(#000, 80%);   // #ccc
+$gray-lightest:         lighten(#000, 93.5%); // #eee
+$white:					#fff;
+
+$brand-primary:         #006d9f;
+$brand-secondary:		#d89300;
+$brand-tertiary:		#22a0f8;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+$color-facebook: 		#3B5998;
+$color-twitter: 		#33CCFF;
+$color-google: 			#000000;
+$color-linkedin: 		#4875B4;
+$color-email: 			#ec0501;
+
+$color-background:		#f7f7f7;
+
+$color-theme-green-light:	#39b627;
+$color-theme-green-dark:	#148f65;
+$color-theme-blue-light:	$brand-tertiary;
+$color-theme-blue-dark:		$brand-primary;
+$color-theme-orange:		$brand-secondary;
+
+// Layout
+$grid-gutter-width:		30px;
+
+// Typography
+$font-family-sans-serif:       'Open Sans', sans-serif;
+$font-family-sans-serif-alt:   'Roboto Condensed', sans-serif;
+$font-family-icon:             'FontAwesome';
+$font-family-entity-icon:	   'NASA CDI Icons';
+$font-family-monospace:        Monaco, Consolas, 'Courier New', monospace;
+
+// Z-Index
+$zindex-1: 10;
+$zindex-2: 20;
+$zindex-3: 30;
+$zindex-4: 40;
+$zindex-5: 50;
+$zindex-6: 60;
+$zindex-7: 70;
+$zindex-8: 80;
+$zindex-9: 90;

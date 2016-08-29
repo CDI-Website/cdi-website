@@ -1,0 +1,17 @@
+{
+  "name": "nasa_cdi",
+  "version": "0.0.0",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4"
+  },
+  "devDependencies": {}
+}

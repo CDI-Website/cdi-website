@@ -1,0 +1,12 @@
+faceted_search:
+  js:
+    js/contrib/jquery.twbsPagination.min.js: { minified: true }
+    js/contrib/jquery.blockui.js: {}
+    js/contrib/jquery.succinct.min.js: { minified: true }
+    js/contrib/masonry.pkgd.min.js: { minified: true }
+    js/contrib/imagesloaded.pkgd.min.js: { minified: true }
+    js/contrib/lz-string.min.js: { minified: true }
+    js/custom/search.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal

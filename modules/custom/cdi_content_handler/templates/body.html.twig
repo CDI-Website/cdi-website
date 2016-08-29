@@ -1,0 +1,39 @@
+{% if entity.description %}
+  <div class="entity-group entity-description content">{{ entity.description|e('html') }}</div>
+{% endif %}
+
+{% if entity.evidence %}
+    <h2 class="entity-group-title">{{ 'Evidence'|t }}</h2>
+    <div class="entity-group entity-evidence content">{{ entity.evidence|e('html') }}</div>
+{% endif %}
+
+{% if entity.uncertainties %}
+    <h2 class="entity-group-title">{{ 'Uncertainties'|t }}</h2>
+    <div class="entity-group entity-uncertainties content">{{ entity.uncertainties|e('html') }}</div>
+{% endif %}
+
+{% include '@cdi_content_handler/_images.html.twig' with {'files':entity.files} %}
+
+{% include '@cdi_content_handler/_temporal_range.html.twig' %}
+
+{% include '@cdi_content_handler/_spatial_range.html.twig' %}
+
+{% include '@cdi_content_handler/_articles.html.twig' with {'articles':entity.articles} %}
+
+{% include '@cdi_content_handler/_chapters.html.twig' with {'chapters':chapters} %}
+
+{% include '@cdi_content_handler/_findings.html.twig' with {'findings':entity.findings} %}
+
+{% include '@cdi_content_handler/_figures.html.twig' with {'figures':entity.figures} %}
+
+{% include '@cdi_content_handler/_contributors.html.twig' with {'contributors':contributors} %}
+
+{% include '@cdi_content_handler/_cited_by.html.twig' with {'citations':citations} %}
+
+{% include '@cdi_content_handler/_related_themes.html.twig' with {'term_maps':entity.term_maps} %}
+
+{% if entity.url %}
+  <div class="entity-group">
+    <a href="{{ baseurl ~ entity.uri }}">{{ 'View Detailed Metadata'|t }}</a>
+  </div>
+{% endif %}

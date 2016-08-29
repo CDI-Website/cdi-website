@@ -1,0 +1,16 @@
+{% if findings %}
+  <div class="entity-group">
+    <h2 class="entity-group-title">{{ 'Findings'|t }}</h2>
+    <ul class="entity-finding-list entity-list">
+      {% for finding in findings %}
+        {% if finding.uri and finding.display_name %}
+          <li>
+            {% if finding.display_name %}
+              <a href="/content{{ finding.uri }}">{{ finding.display_name }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

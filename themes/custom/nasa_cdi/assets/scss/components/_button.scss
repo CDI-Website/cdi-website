@@ -1,0 +1,126 @@
+/* =================================================================================
+~ Button
+================================================================================= */
+
+.btn {
+	background: $brand-secondary;
+	color: $white;
+	display: inline-block;
+	@include font-size( 16 );
+	line-height: 1;
+	padding: 10px 15px;
+	position: relative;
+
+	&:hover {
+		background: lighten( $brand-secondary, 5% );
+		border-color: lighten( $brand-secondary, 5% );
+		text-decoration: none;
+	}
+
+	&.btn-outline {
+		background: transparent;
+		border: 1px solid $brand-secondary;
+		color: $brand-secondary;
+		font-weight: bold;
+		padding-right: 40px;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $brand-secondary;
+			color: $white;
+		}
+	}
+
+	&.btn-icon {
+		&:after {
+			font-family: $font-family-icon;
+			position: absolute;
+			right: 10px;
+		}
+	}
+
+	&.btn-start {
+		&:after {
+			content: '\f178';
+		}
+	}
+
+	&.btn-control {
+		border-color: $white;
+		color: $white;
+	}
+
+	&.btn-search-term {
+		font-weight: bold;
+
+		&:after {
+			content: '\f002';
+		}
+	}
+
+	&.btn-white {
+		border-color: $white;
+		color: $white;
+
+		&:hover {
+			background: $white;
+			color: $brand-tertiary;
+		}
+	}
+
+	&.form-submit {
+		background: transparent;
+		border: 1px solid $brand-secondary;
+		color: $brand-secondary;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&:hover {
+			background: $brand-secondary;
+			color: $white;
+		}
+	}
+
+	&.btn-diamond {
+		background: $brand-secondary;
+		border-color: $brand-secondary;
+		border-width: 0;
+		color: $white;
+		font-family: $font-family-sans-serif-alt;
+
+		&:hover {
+			background: lighten( $brand-secondary, 10% );
+
+			&:before,
+			&:after {
+				border-left-color: lighten( $brand-secondary, 10% );
+				border-right-color: lighten( $brand-secondary, 10% );
+			}
+		}
+
+		&:before,
+		&:after {
+			border-top: 18px solid transparent;
+			border-bottom: 18px solid transparent;
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+		}
+
+		&:before {
+			border-right-color: inherit;
+			border-right-style: solid;
+			border-right-width: 10px;
+			left: -10px;
+		}
+
+		&:after {
+			border-left-color: inherit;
+			border-left-style: solid;
+			border-left-width: 10px;
+			right: -10px;
+		}
+	}
+}

@@ -1,0 +1,156 @@
+<form id="search-button" class="search-form" type="submit">
+  <label for="search-term-field" class="sr-only">{{ 'Search'|t }}</label>
+  <input required type="text" class="full-width search-field" id="search-term-field" />
+  <button class="search-submit"><span class="sr-only">{{ 'Search'|t }}</span></button>
+</form>
+
+<div class="results-header">
+  <h1 id="result-totals" class="page-header"></h1>
+
+  <div class="results-filters-dropdown-container">
+    <label class="results-filters-label">View by:</label>
+
+    <div class="select-wrapper">
+      <select id="filters-dropdown" class="results-filters-dropdown">
+        <option data-facet="in_depth_assessments" data-name="{{ 'In-Depth Assessments'|t }}">{{ 'In-Depth Assessments'|t }}</option>
+        <option data-facet="short_assessments" data-name="{{ 'Short Assessments'|t }}">{{ 'Short Assessments'|t }}</option>
+        <option data-facet="images" data-name="{{ 'Images/Figures'|t }}">{{ 'Images/Figures'|t }}</option>
+        <option data-facet="data" data-name="{{ 'Datasets'|t }}">{{ 'Datasets'|t }}</option>
+        <option data-facet="resiliency" data-name="{{ 'Resiliency'|t }}">{{ 'Resiliency'|t }}</option>
+        <option data-facet="others" data-name="{{ 'Others'|t }}">{{ 'Others'|t }}</option>
+      </select>
+    </div>
+  </div>
+
+  <ul id="filters-tabs" class="results-filters-tabs">
+    <li data-facet="in_depth_assessments" class="results-filter active js-bucket_in_depth_assessments" data-toggle="tab">
+      <a href="#">{{ 'In-Depth Assessments'|t }}<span class="js-count_in_depth_assessments"></span></a>
+    </li>
+    <li data-facet="short_assessments" class="results-filter js-bucket_short_assessments" data-toggle="tab">
+      <a href="#">{{ 'Short Assessments'|t }}<span class="js-count_short_assessments"></span></a>
+    </li>
+    <li data-facet="images" class="results-filter js-bucket_images" data-toggle="tab">
+      <a href="#">{{ 'Images/Figures'|t }}<span class="js-count_images"></span></a>
+    </li>
+    <li data-facet="data" class="results-filter js-bucket_data" data-toggle="tab">
+      <a href="#">{{ 'Datasets'|t }}<span class="js-count_data"></span></a>
+    </li>
+    <li data-facet="resiliency" class="results-filter js-bucket_resiliency" data-toggle="tab">
+      <a href="#">{{ 'Resiliency'|t }}<span class="js-count_resiliency"></span></a>
+    </li>
+    <li data-facet="others" class="results-filter js-bucket_others" data-toggle="tab">
+      <a href="#">{{ 'Others'|t }}<span class="js-count_others"></span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="results-description js-info">
+    <div class="js-facet-description"></div>
+    <div>{{ 'Up to 6 results of each type are shown. To see more, click on a specific resource'|t }}</div>
+</div>
+
+<div id="all_results" class="results-content">
+  <div class="hidden results-bucket results-bucket-empty">
+    <div id="results_none" data-results="none">
+      <em>{{ 'We were unable to find results for '|t }}<span class="results-bucket-count" data-count="none"></span></em>
+      <p>{{ 'Check your spelling or simplify your search by using a single word.'|t }}</p>
+    </div>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-dataset">
+    <h2 class="results-bucket-title">{{ 'Datasets'|t }} (<span class="results-bucket-count" data-count="dataset"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="dataset"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-platform">
+    <h2 class="results-bucket-title">{{ 'Platforms'|t }} (<span class="results-bucket-count" data-count="platform"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="platform"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-instrument">
+    <h2 class="results-bucket-title">{{ 'Instruments'|t }} (<span class="results-bucket-count" data-count="instrument"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="instrument"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-model">
+    <h2 class="results-bucket-title">{{ 'Models'|t }} (<span class="results-bucket-count" data-count="model"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="model"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-report">
+    <h2 class="results-bucket-title">{{ 'Reports'|t }} (<span class="results-bucket-count" data-count="report"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="report"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-chapter">
+    <h2 class="results-bucket-title">{{ 'Chapters'|t }} (<span class="results-bucket-count" data-count="chapter"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="chapter"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-figure">
+    <h2 class="results-bucket-title">{{ 'Figures'|t }} (<span class="results-bucket-count" data-count="figure"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="figure"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-table">
+    <h2 class="results-bucket-title">{{ 'Tables'|t }} (<span class="results-bucket-count" data-count="table"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="table"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-finding">
+    <h2 class="results-bucket-title">{{ 'Findings'|t }} (<span class="results-bucket-count" data-count="finding"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="finding"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-journal">
+    <h2 class="results-bucket-title">{{ 'Journals'|t }} (<span class="results-bucket-count" data-count="journal"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="journal"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-article">
+    <h2 class="results-bucket-title">{{ 'Articles'|t }} (<span class="results-bucket-count" data-count="article"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="article"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-image">
+    <h2 class="results-bucket-title">{{ 'Images'|t }} (<span class="results-bucket-count" data-count="image"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="image"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-web-page">
+    <h2 class="results-bucket-title">{{ 'Web Pages'|t }} (<span class="results-bucket-count" data-count="webpage"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="webpage"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-book">
+    <h2 class="results-bucket-title">{{ 'Books'|t }} (<span class="results-bucket-count" data-count="book"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="book"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-organization">
+    <h2 class="results-bucket-title">{{ 'Organizations'|t }} (<span class="results-bucket-count" data-count="organization"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="organization"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-person">
+    <h2 class="results-bucket-title">{{ 'People'|t }} (<span class="results-bucket-count" data-count="person"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="person"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-toolkit">
+    <h2 class="results-bucket-title">{{ 'Toolkits'|t }} (<span class="results-bucket-count" data-count="toolkit"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="toolkit"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-case-study">
+    <h2 class="results-bucket-title">{{ 'Case Studies'|t }} (<span class="results-bucket-count" data-count="case_study"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="case_study"></ul>
+  </div>
+
+  <div class="hidden results-bucket results-bucket-vocabulary">
+    <h2 class="results-bucket-title">{{ 'Vocabularies'|t }} (<span class="results-bucket-count" data-count="vocabulary"></span>)</h2>
+    <ul class="grid results-bucket-list" data-results="vocabulary"></ul>
+  </div>
+
+  <div id="pagination" class="hidden results-pagination"></div>
+</div>

@@ -1,0 +1,12 @@
+{% if chapters %}
+  <h2 class="entity-group-title">{{ 'Chapters'|t }}</h2>
+  <ul class="entity-chapter-list entity-list">
+    {% for chapter in chapters %}
+      <li>
+        {% if chapter.display_name %}
+          <a href="/content{{ chapter.uri }}">{{ chapter.display_name }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

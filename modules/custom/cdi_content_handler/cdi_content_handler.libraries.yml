@@ -1,0 +1,6 @@
+cdi_content_handler:
+  js:
+    js/contrib/hide-max-list.min.js: { minified: true }
+    js/custom/contentLimiter.js: {}
+  dependencies:
+  - core/jquery

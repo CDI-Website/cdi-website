@@ -1,0 +1,16 @@
+{% if figures %}
+  <div class="entity-group">
+    <h3 class="entity-group-title">{{ 'Figures'|t }}</h3>
+    <ul class="entity-figure-list entity-list">
+      {% for figure in figures %}
+        {% if figure.uri and figure.display_name %}
+          <li>
+            {% if figure.display_name %}
+              <a href="/content{{ figure.uri }}">{{ figure.display_name }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

@@ -1,0 +1,76 @@
+/* =================================================================================
+Form
+================================================================================= */
+
+// Container
+.path-contact .main-container-inner {
+	@media screen and (min-width: $screen-sm) {
+		padding: 60px;
+	}
+}
+
+// Report Data URL Formatting
+.report-data-url {
+	color: $brand-primary;
+	@include font-size( 18 );
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+// Form Elements
+.contact-form {
+	font-family: $font-family-sans-serif-alt;
+	@include font-size( 18 );
+
+	.form-item,
+	.captcha {
+		margin-bottom: 30px;
+	}
+
+	label {
+		color: $brand-primary;
+		display: inline-block;
+		margin-bottom: 15px;
+	}
+
+	span.form-required {
+		color: $brand-danger;
+		margin-left: 2px;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea,
+	.select-wrapper {
+		background: $white;
+		border: 0;
+		box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .1 );
+		display: block;
+		padding: 10px;
+	}
+
+	.select-wrapper {
+		padding: 10px 10px 10px 5px;
+
+		select {
+			background: $white;
+			border: 0;
+			width: 100%;
+		}
+	}
+
+	// Field widths
+	input[type="text"],
+	input[type="email"],
+	.select-wrapper {
+		width: 100%;
+
+		@media screen and (min-width: $screen-md) {
+			width: 50%;
+		}
+	}
+
+	textarea {
+		width: 100%;
+	}
+}

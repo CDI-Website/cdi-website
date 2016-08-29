@@ -1,0 +1,14 @@
+<?php
+
+function cdi_content_handler_theme(){
+  return array(
+    'cdi_content_handler' => [
+      'variables' => ['entity' => NULL, 'chapters' => NULL, 'contributors' => NULL, 'citations' => NULL, 'baseurl' => NULL],
+      'template' => 'cdi_content_handler',
+    ],
+    'cdi_term_handler' => [
+      'variables' => ['entity' => NULL, 'counts' => NULL, 'popular_resource' => NULL],
+      'template' => 'cdi_term_handler',
+    ]
+  );
+}

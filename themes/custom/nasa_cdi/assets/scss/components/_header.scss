@@ -1,0 +1,160 @@
+/* =================================================================================
+Header
+================================================================================= */
+
+.header {
+	background: $brand-primary;
+	box-shadow: 0px 5px 15px 0px rgba( 0, 0, 0, 0.5);
+	color: $white;
+	position: relative;
+
+	.container {
+		padding: 25px 15px;
+		position: relative;
+
+		@media screen and (min-width: $screen-md) {
+			padding: 45px 15px;
+		}
+	}
+}
+
+.logo {
+	width: 180px;
+}
+
+.navbar-toggle {
+	color: #fff;
+	position: absolute;
+	right: 15px;
+	bottom: 30px;
+
+	@media screen and (min-width: $screen-md) {
+		display: none;
+	}
+
+	&:before {
+		content: '\f0c9';
+		font-family: $font-family-icon;
+		@include font-size( 42 );
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX( -50% );
+	}
+
+	&.active:before {
+		content: '\f00d';
+	}
+
+	.navbar-toggle-text {
+		@include font-size( 18 );
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+.navbar-primary {
+	position: absolute;
+
+	@media screen and (min-width: $screen-md) {
+		right: 15px;
+		bottom: 0;
+
+		&.collapse {
+			display: block;
+		}
+	}
+
+	@media screen and (max-width: $screen-md) {
+		&.collapsing,
+		&.in {
+			background: $brand-primary;
+			box-shadow: 0px 5px 15px 0px rgba( 0, 0, 0, 0.5), inset 0px 5px 15px 0px rgba( 0, 0, 0, 0.5);
+			top: 100%;
+			left: 0;
+			width: 100%;
+			z-index: $zindex-9;
+
+			.menu {
+				padding: 30px;
+			}
+
+			.menu-item {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				a {
+					padding-bottom: 2px;
+				}
+			}
+		}
+	}
+
+	.menu-item {
+		a {
+			border-bottom-color: transparent;
+			border-bottom-style: solid;
+			border-bottom-width: 2px;
+			color: #fff;
+			display: inline-block;
+			font-family: $font-family-sans-serif-alt;
+			@include font-size(18);
+			font-weight: bold;
+
+			&:hover,
+			&.is-active {
+				border-bottom-color: #fff;
+				text-decoration: none;
+			}
+
+			@media screen and (min-width: $screen-sm) {
+				padding-bottom: 30px;
+				border-bottom-width: 5px;
+			}
+		}
+
+		@media screen and (min-width: $screen-md) {
+			float: left;
+			margin-left: 30px;
+		}
+	}
+}
+
+.block-social-media-links {
+	display: none;
+	position: absolute;
+	top: 35px;
+	right: 100px;
+	
+	@media screen and (min-width: $screen-sm) {
+		display: block;
+	}
+
+	@media screen and (min-width: $screen-md) {
+		right: 15px;
+	}
+
+	li {
+		padding: 0 !important;
+		margin-left: 25px !important;
+	}
+
+	a {
+		color: #fff;
+		display: table;
+		@include font-size( 10 );
+		@include hexagon( 34px, transparent, 1px solid $white );
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	span {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}

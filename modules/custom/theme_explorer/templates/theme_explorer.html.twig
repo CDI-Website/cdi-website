@@ -1,0 +1,80 @@
+<div class="theme-explorer" id="explorer-container">
+  <div class="theme-explorer-controls">
+    <h2 class="theme-explorer-controls-title">{{ 'Controls'|t }}</h2>
+    <ul class="theme-explorer-controls-list">
+      <li class="theme-explorer-controls-item">
+        <button class="btn btn-outline btn-control btn-center" data-action="re-center">
+          <span class="glyphicon glyphicon-screenshot"></span>{{ 'Restart Diagram'|t }}
+        </button>
+      </li>
+      <li class="theme-explorer-controls-item">
+        <button class="btn btn-outline btn-control btn-zoom-in" data-action="zoom-in">
+          <span class="glyphicon glyphicon-zoom-in"></span>{{ 'Zoom-In'|t }}
+        </button>
+      </li>
+      <li class="theme-explorer-controls-item">
+        <button class="btn btn-outline btn-control btn-zoom-out" data-action="zoom-out">
+          <span class="glyphicon glyphicon-zoom-out"></span>{{ 'Zoom-Out'|t }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <h1 class="page-header">{{ 'Concept Explorer: '|t }}<span class="js-title"></span></h1>
+  <div id="explorer"></div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id='info-modal' tabindex="-1" role="dialog" aria-labelled-by='#info-modal-label'>
+  <div class="modal-dialog">
+    <div class="modal-content theme-explorer-modal">
+      <button type="button" class="theme-explorer-modal-close" data-dismiss="modal" aria-label="Close"></button>
+
+      <h3 class="modal-title js-modal-title page-header"></h3>
+      <p class="js-summary content">{{ 'Summary Text'|t }}</p>
+
+      <div class="entity-group js-related-themes"></div>
+
+      <div class='entity-group js-related-data'>
+        <h4 class="entity-group-title">{{ 'Summary of Related Federal Resources'|t }}</h4>
+        <div class='row text-center'>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-depth-assessments">
+                <h5 class="js-counts js-depth-assessments-count"></h5>
+                <span>{{ 'In-Depth Assessments'|t }}</span>
+            </a>
+          </div>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-short-assessments">
+                <h5 class="js-counts js-short-assessments-count"></h5>
+                <span>{{ 'Short Assessments'|t }}</span>
+            </a>
+          </div>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-images">
+              <h5 class="js-counts js-images-count"></h5>
+              <span>{{ 'Images'|t }}</span>
+            </a>
+          </div>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-data">
+              <h5 class="js-counts js-data-count"></h5>
+              <span>{{ 'Data'|t }}</span>
+            </a>
+          </div>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-resiliency">
+              <h5 class="js-counts js-resiliency-count"></h5>
+              <span>{{ 'Resiliency'|t }}</span>
+            </a>
+          </div>
+          <div class='entity-related-count col-xs-4 col-md-2 hidden'>
+            <a class="js-link-others">
+              <h5 class="js-counts js-others-count"></h5>
+              <span>{{ 'Others'|t }}</span>
+            </a>
+          </div>
+        </div>
+        <a class="btn btn-outline btn-icon btn-search-term js-search-url" href='#'>{{ 'Find Federal Resources'|t }}</a>
+      </div>
+    </div>
+  </div>
+</div>

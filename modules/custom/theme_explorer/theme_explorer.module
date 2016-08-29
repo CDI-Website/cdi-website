@@ -1,0 +1,10 @@
+<?php
+
+function theme_explorer_theme(){
+  return array(
+    'theme_explorer' => [
+      'variables' => ['name' => NULL],
+      'template' => 'theme_explorer',
+    ]
+  );
+}

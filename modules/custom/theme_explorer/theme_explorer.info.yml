@@ -1,0 +1,7 @@
+name: Theme Explorer
+type: module
+description: Explore the different themes in the CDI Database
+package: Custom
+core: 8.x
+libraries:
+  - theme_explorer/theme_explorer

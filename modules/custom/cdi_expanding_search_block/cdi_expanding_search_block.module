@@ -1,0 +1,10 @@
+<?php
+
+function cdi_expanding_search_block_theme(){
+  return array(
+    'cdi_expanding_search_block' => [
+      'variables' => array(),
+      'template' => 'cdi_expanding_search_block',
+    ]
+  );
+}

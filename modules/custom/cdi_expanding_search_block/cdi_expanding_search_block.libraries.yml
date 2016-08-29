@@ -1,0 +1,6 @@
+cdi_expanding_search_block:
+  js:
+    js/custom/expand.js: {}
+  css:
+  component:
+    css/contrib/style.css: {}

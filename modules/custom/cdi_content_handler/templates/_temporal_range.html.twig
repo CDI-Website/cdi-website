@@ -1,0 +1,8 @@
+{% if entity.start_time and entity.end_time %}
+	<div class="entity-group">
+	  <h3 class="entity-group-title">{{ 'Temporal Range'|t }}</h3>
+	  <div class="entity-temporal-range">
+	    {{ entity.start_time|date("M d, Y \\(h:iA\\)") }} {{ ' to '|t }} {{ entity.end_time|date("M d, Y \\(h:iA\\)") }}
+	  </div>
+	</div>
+{% endif %}

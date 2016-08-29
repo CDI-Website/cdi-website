@@ -1,0 +1,6 @@
+faceted_search:
+  path: /faceted-search
+  defaults:
+    _controller: Drupal\faceted_search\Controller\FacetedSearchController::index
+  requirements:
+    _permission: 'access content'

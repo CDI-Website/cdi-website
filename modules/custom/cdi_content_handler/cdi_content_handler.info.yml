@@ -1,0 +1,7 @@
+name: CDI Content Handler
+type: module
+description: Get and display content items from CDI database
+package: Custom
+core: 8.x
+libraries:
+  - cdi_content_handler/cdi_content_handler

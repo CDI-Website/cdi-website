@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * Provides a Views plugin for displaying content in a Masonry layout.
+ *
+ * Sponsored by: www.freelance-drupal.com
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Preprocess function for views-view-masonry.html.twig
+ */
+function masonry_views_preprocess_views_view_masonry(&$variables) {
+
+  // Get view options
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  $style = $view->style_plugin;
+  $options = $style->options;
+
+  // Build the view container
+  $container = '.view-' . Html::cleanCssIdentifier($view->storage->id()) . '.view-display-id-' . $view->current_display . ' > .view-content';
+
+  // If grouping enabled, style it.
+  if (!empty($options['grouping'])) {
+    $variables['grouping'] = true;
+    static $groupid;
+    $container .= ' .masonry-group-' . ++$groupid;
+    $variables['grouping_class'] = "masonry-group masonry-group-$groupid";
+  }
+
+  // Add rows default and custom CSS classes.
+  $variables['default_row_class'] = !empty($options['default_row_class']);
+  foreach ($rows as $id => $row) {
+    $variables['rows'][$id] = array();
+    $variables['rows'][$id]['content'] = $row;
+    $variables['rows'][$id]['attributes'] = new Attribute();
+    $variables['rows'][$id]['attributes']->addClass("masonry-item");
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $variables['rows'][$id]['attributes']->addClass($row_class);
+    }
+  }
+
+  // Display content in a Masonry layout
+  $item_selector = '.masonry-item';
+  \Drupal::service('masonry.service')->applyMasonryDisplay($variables, $container, $item_selector, $options);
+}

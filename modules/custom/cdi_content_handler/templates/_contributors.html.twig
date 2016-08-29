@@ -1,0 +1,24 @@
+{% if contributors %}
+  <div class="entity-group">
+    <h2 class="entity-group-title">{{ contributors.type }}</h2>
+
+    <ul class="entity-contibutor-roles">
+      {% for role_type in contributors %}
+        {% if role_type.label %}
+          <h3 class="entity-contributor-role-title">{{ role_type.label }}</h3>
+          <ul class="entity-contributor-list entity-list">
+        {% endif %}
+          {% for contributor in role_type.contributors %}
+            {% if contributor.publications|length == 0 %}
+                <li>{% include '@cdi_content_handler/_contributor.html.twig' with {'contributor':contributor} %}</li>
+            {% else %}
+                {% include '@cdi_content_handler/_contribution.html.twig' with {'contributor':contributor} %}
+            {% endif %}
+          {% endfor %}
+        {% if role_type.label %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

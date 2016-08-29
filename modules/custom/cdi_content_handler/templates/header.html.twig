@@ -1,0 +1,59 @@
+{% if entity.display_name %}
+  <h1 class="page-header">{{ entity.display_name }}</h1>
+{% endif %}
+
+<div class="article-meta">
+	{% if entity.publisher %}
+
+	  <div class="entity-publisher">Publisher: {{ entity.publisher }}</div>
+
+	{% endif %}
+
+	{% if entity.isbn %}
+
+	  <div class="entity-isbn">ISBN: {{ entity.isbn }}</div>
+
+	{% endif %}
+
+	{% if entity.publication_year %}
+
+  <div class="entity-publish-date">Publication Year: {{ entity.publication_year }}</div>
+
+	{% endif %}
+
+	{% if entity.journal_id %}
+
+	  <div class="entity-journal-id">Journal ID: {{ entity.journal_id }}</div>
+
+	{% endif %}
+
+	{% if entity.pages %}
+
+	  <div class="entity-pages">Pages: {{ entity.pages }}</div>
+
+	{% endif %}
+
+	{% if entity.journal_vol %}
+
+	  <div class="entity-journal-vol">Journal Volume: {{ entity.journal_vol }}</div>
+
+	{% endif %}
+
+	{% if entity.year %}
+
+	  <div class="entity-year">Year: {{ entity.year }}</div>
+
+	{% endif %}
+
+	{% if entity.chapter %}
+
+	  <div class="entity-chapter">{{ entity.chapter.display_name }}</div>
+
+	{% endif %}
+
+	{% if entity.url %}
+
+		<div class="entity-group entity-external-url"><a href="{{ entity.url }}">{{ entity.url }}</a></div>
+
+	{% endif %}
+</div>

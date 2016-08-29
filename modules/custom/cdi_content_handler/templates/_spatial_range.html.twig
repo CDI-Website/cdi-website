@@ -1,0 +1,9 @@
+{% if entity.lat_max and entity.lat_min and entity.lon_max and entity.lon_min %}
+	<div class="entity-group">
+	  <h3 class="entity-group-title">{{ 'Spatial Range'|t }}</h3>
+	  <div class="entity-spatial-range">
+	    {{ entity.lat_min }} {{ ' to '|t }} {{ entity.lat_max }} {{ ' latitude and '|t }}
+	    {{ entity.lon_min }} {{ ' to '|t }} {{ entity.lon_max }} {{ ' longitude'|t }}
+	  </div>
+	</div>
+{% endif %}

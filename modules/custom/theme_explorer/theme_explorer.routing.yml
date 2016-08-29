@@ -1,0 +1,6 @@
+theme-explorer:
+  path: /theme-explorer
+  defaults:
+    _controller: Drupal\theme_explorer\Controller\ThemeExplorerController::index
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,10 @@
+<?php
+
+function faceted_search_theme(){
+  return array(
+    'faceted_search' => [
+      'variables' => ['name' => NULL],
+      'template' => 'faceted_search',
+    ]
+  );
+}

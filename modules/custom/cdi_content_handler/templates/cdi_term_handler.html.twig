@@ -1,0 +1,61 @@
+<div class="entity-container entity-container-theme">
+  <div class="region region-header">
+    <h1 class="page-header">{{ entity.term }}</h1>
+
+    <div class="entity-meta">
+      {% if counts %}
+        <div class="entity-related-resources">
+          <label class="entity-related-resources-label">{{ 'Related Resources'|t }}:</label>
+          {% for resource in counts %}
+            {% if resource.results_count > 0 %}
+                <span class="entity-related-resources-item"><a href="{{ path('faceted_search', {'search_term':entity.display_name, 'facet':resource.type}) }}">{{ resource.label }} ({{ resource.results_count }})</a></span>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      <a class="btn btn-outline btn-icon btn-search-term btn-white" href="{{ path('faceted_search', {'search_term':entity.display_name}) }}">{{ 'Find Federal Resources'|t }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="region region-content">
+    <div class="entity-group entity-description content">
+      <p>{{ entity.description }}</p>
+    </div>
+
+    {% if entity.children %}
+      <div class="entity-group">
+        <h3 class="entity-group-title">{{ 'Related Terms'|t }}</h3>
+        <ul class="entity-related-terms">
+          {% for term in entity.children %}
+            {% if term.object %}
+              <li class="entity-related-term">
+                <a class="btn btn-diamond" href="{{ path('cdi_content_handler.vocabulary', {'lexicon':term.object_tree.lexicon_identifier, 'theme':term.object_tree.context_identifier, 'id':term.object_tree.display_name}) }}">{{ term.object_tree.display_name }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="entity-footer">
+  <div class="row">
+    {% if popular_resource %}
+      <div class="entity-popular-resource grid-item grid-item-featured col-md-6">
+        <a class="grid-link" href="{{ popular_resource.url }}">
+          <h3 class="grid-title">{{ popular_resource.title|t }} <span class="grid-meta">{{ popular_resource.type|t }}</span></h3>
+          <div class="grid-content content">{{ popular_resource.summary|t }}</div>
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="entity-concept-explorer {{ ( popular_resource ) ? 'col-md-6' : 'col-xs-12' }}">
+      <a href="{{ path('theme-explorer', {'id':entity.display_name}) }}" class="entity-concept-explorer-link">
+        <div class="entity-concept-explorer-text">{{ 'Concept Explorer'|t }}</div>
+        <img class="entity-concept-explorer-image" src="/{{ directory }}/assets/images/concept-explorer.png" alt="Concept Explorer">
+      </a>
+    </div>
+  </div>
+</div>

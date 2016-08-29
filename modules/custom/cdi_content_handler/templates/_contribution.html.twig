@@ -1,0 +1,5 @@
+{% for publication in contributor.publications %}
+  {% if publication.display_name %}
+    <li><a href="/content{{ publication.uri }}">{{ publication.display_name }}</a></li>
+  {% endif %}
+{% endfor %}

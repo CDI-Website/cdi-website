@@ -1,0 +1,10 @@
+masonry.layout:
+  js:
+    js/masonry.js: {}
+  drupalSettings:
+    # These placeholder values will be set by system_js_settings_alter().
+    masonry: []
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

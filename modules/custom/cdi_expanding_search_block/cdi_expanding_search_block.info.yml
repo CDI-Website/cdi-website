@@ -1,0 +1,8 @@
+name: Expanding Search Button
+description: Search button that animates a field display
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

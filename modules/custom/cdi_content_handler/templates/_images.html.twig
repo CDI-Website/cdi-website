@@ -1,0 +1,14 @@
+{% if files %}
+  <div class="entity-group">
+    <h2 class="entity-group-title">{{ 'Image'|t }}</h2>
+    <ul class="entity-image-list entity-list">
+    {% if files[0] %}
+      {% if files[0].mime_type is same as('application/pdf') %}
+        <a href="{{ files[0].href }}"><img src="{{ files[0].thumbnail_href }}" alt="{{ files[0].display_name }}"></a>
+      {% else %}
+        <img src="{{ files[0].href }}" alt="{{ files[0].display_name }}">
+      {% endif %}
+    {% endif %}
+    </ul>
+  </div>
+{% endif %}

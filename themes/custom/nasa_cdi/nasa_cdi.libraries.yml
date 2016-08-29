@@ -1,0 +1,12 @@
+theme-styles:
+  css:
+    theme:
+      assets/css/style.css: {}
+
+theme-scripts:
+  js:
+    assets/js/scripts.js: {}
+
+bootstrap-scripts:
+  js:
+    bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js: {}

@@ -1,0 +1,16 @@
+{% if citations %}
+  <div class="entity-group">
+    <h2 class="entity-group-title">{{ 'Cited By'|t }}</h2>
+    <ul class="entity-citation-list entity-list">
+      {% for citation in citations %}
+        {% if citation.uri and citation.display_name %}
+          <li>
+            {% if citation.display_name %}
+              <a href="/content{{ citation.uri }}">{{ citation.display_name }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

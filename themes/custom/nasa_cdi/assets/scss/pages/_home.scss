@@ -1,0 +1,279 @@
+/* =================================================================================
+Home
+================================================================================= */
+
+.path-frontpage {
+	.main-container-wrapper {
+		background: url(../images/bg-home.jpg) no-repeat fixed center;
+	}
+}
+
+.region-home-top {
+	position: relative;
+
+	@media screen and (min-width: $screen-md) {
+		height: 470px;
+	}
+}
+
+.region-home-bottom {
+	background: $white;
+	margin: 0 auto -30px;
+	padding-top: 100px;
+	position: relative;
+	width: calc( 100% - 80px );
+
+	&:before,
+	&:after {
+		border-top-color: transparent;
+		border-top-style: solid;
+		border-top-width: 80px;
+		content: '';
+		position: absolute;
+		top: 0;
+		height: 100%;
+	}
+
+	&:before {
+		right: 100%;
+		border-right-color: $white;
+		border-right-style: solid;
+		border-right-width: 55px;
+	}
+
+	&:after {
+		left: 100%;
+		border-left-color: $white;
+		border-left-style: solid;
+		border-left-width: 55px;
+	}
+
+	.block {
+		margin: 0 -15px 0 -15px;
+		position: relative;
+		z-index: $zindex-9;
+	}
+
+	@media screen and (min-width: $screen-sm) {
+		padding: 60px 15px 15px;
+		width: calc( 100% - 200px; );
+
+		&:before,
+		&:after {
+			border-top-width: 150px;
+		}
+
+		&:before {
+			border-right-width: 100px;
+		}
+
+		&:after {
+			border-left-width: 100px;
+		}
+	}
+
+	@media screen and (min-width: $screen-md) {
+		margin-bottom: 60px;
+		padding: 60px 15px;
+		width: calc( 100% - 300px; );
+
+		&:before,
+		&:after {
+			border-top-width: 300px;
+			border-bottom-color: transparent;
+			border-bottom-style: solid;
+			border-bottom-width: 300px;
+		}
+
+		&:before {
+			border-right-width: 175px;
+		}
+
+		&:after {
+			border-left-width: 175px;
+		}
+	}
+
+	@media screen and (min-width: $screen-lg) {
+		width: calc( 100% - 500px; );
+	}
+}
+
+.region-home-top .page-header {
+	color: $white;
+	@include font-size( 40 );
+	font-weight: bold;
+	margin-bottom: 30px;
+	padding: 0 15px;
+	text-shadow: 0px 0px 10px rgba( 0, 0, 0, .75 );
+
+	@media screen and (min-width: $screen-md) {
+		@include font-size( 64 );
+		line-height: 1.1;
+		position: absolute;
+		top: 100px;
+		left: 0px;
+		text-align: right;
+		width: 270px;
+	}
+
+	@media screen and (min-width: $screen-lg) {
+		left: 130px;
+	}
+}
+
+.region-home-top .search-form {
+	box-shadow: 0px 0px 10px rgba( 0, 0, 0, .75 );
+	margin-bottom: 30px;
+
+	@media screen and (min-width: $screen-md) {
+		position: absolute;
+		top: 0;
+		left: 380px;
+		width: 420px;
+	}
+
+	@media screen and (min-width: $screen-lg) {
+		left: 580px;
+	}
+}
+
+.region-home-top #block-nasa-cdi-views-block-theme-block-block-1 {
+	.theme-link {
+		box-shadow: 0px 0px 10px rgba( 0, 0, 0, .75 );
+	}
+
+	@media screen and (max-width: $screen-md) {
+		.theme-list {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		.theme {
+			margin-bottom: 5px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@media screen and (min-width: $screen-md) {
+		.theme-list {
+			position: absolute;
+			top: 100px;
+			right: 0;
+			width: 600px;
+			z-index: $zindex-9;
+		}
+
+		.theme {
+			float: left;
+
+			&:nth-child( odd ) {
+				margin-right: 110px;
+			}
+
+			&:nth-child( 4n + 1 ) {
+				margin-left: 142px;
+			}
+
+			&:nth-child( 4n + 3 ),
+			&:nth-child( 4n + 4 ),
+			&:nth-child( 4n + 5 ),
+			&:nth-child( 4n + 6 ) {
+				margin-top: -70px;
+			}
+
+			&:nth-child( 9 ) {
+				margin-left: 426px;
+			}
+		}
+	}
+}
+
+.region-home-bottom #block-views-block-stay-current-block-1-2 {
+	display: none;
+	margin-bottom: 60px;
+
+	.block-title {
+		color: $gray-lighter;
+		@include font-size( 16 );
+		font-weight: bold;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
+
+	.featured-article-list {
+		@include make-row();
+	}
+
+	.featured-article {
+		@include make-sm-column( 6 );
+		@include make-md-column( 4 );
+
+		&:nth-child(3) {
+			display: none;
+		}
+
+		@media screen and (min-width: $screen-md) {
+			&:nth-child(3) {
+				display: block;
+			}
+		}
+
+		.img-responsive {
+			margin-bottom: 10px;
+			width: 100%;
+		}
+
+		h3 {
+			@include font-size( 24 );
+			font-weight: normal;
+		}
+
+		.featured-article-has-image h3 {
+			@include font-size( 14 );
+		}
+	}
+
+	@media screen and (min-width: $screen-sm) {
+		display: block;
+	}
+}
+
+.region-home-bottom #block-nasa-cdi-views-block-mission-statement-block-1 {
+	margin-bottom: 60px;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+	}
+
+	.btn-start {
+		float: right;
+	}
+}
+
+.region-home-bottom #block-nasa-cdi-views-block-participating-agencies-block-1 {
+	text-align: center;
+	line-height: 1.2;
+
+	.agency-list {
+		margin: 15px 0 30px;
+	}
+
+	.agency {
+		margin: 0 2px 5px;
+		display: inline-block;
+		width: 15%;
+
+		@media screen and (min-width: $screen-sm) {
+			width: 10%;
+		}
+
+		@media screen and (min-width: $screen-md) {
+			width: 6%;
+		}
+	}
+}

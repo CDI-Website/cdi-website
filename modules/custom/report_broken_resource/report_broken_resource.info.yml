@@ -1,0 +1,5 @@
+name: Report Broken Resource
+type: module
+description: Report a broken or missing resource
+package: Custom
+core: 8.x

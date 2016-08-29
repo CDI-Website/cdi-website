@@ -1,0 +1,72 @@
+cdi_content_handler.vocabulary:
+  path: /vocabulary/{lexicon}/{theme}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::vocabulary
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.chapter:
+  path: /content/report/{report_id}/chapter/{chapter_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::chapter
+  requirements:
+    _permission: 'access content'
+
+
+cdi_content_handler.content:
+  path: /content/{type}/{id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::content
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.chapterFinding:
+  path: /content/chapter/{chapter_id}/finding/{finding_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::chapterFinding
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.report:
+  path: /content/report/{report_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::report
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.reportFinding:
+  path: /content/report/{report_id}/finding/{finding_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::reportFinding
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.reportChapterFinding:
+  path: /content/report/{report_id}/chapter/{chapter_id}/finding/{finding_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::reportChapterFinding
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.reportChapterFigure:
+  path: /content/report/{report_id}/chapter/{chapter_id}/figure/{figure_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::reportChapterFigure
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.reportFigure:
+  path: /content/report/{report_id}/figure/{figure_id}
+  defaults:
+    _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::reportFigure
+  requirements:
+    _permission: 'access content'
+
+cdi_content_handler.article:
+   path: /content/article
+   defaults:
+     _controller: Drupal\cdi_content_handler\Controller\ContentHandlerController::article
+   requirements:
+     _permission: 'access content'
+
+

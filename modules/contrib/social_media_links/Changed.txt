@@ -1,0 +1,1 @@
+Modified RSS Class to accept a full external URL rather than using the Drupal site Base URL.

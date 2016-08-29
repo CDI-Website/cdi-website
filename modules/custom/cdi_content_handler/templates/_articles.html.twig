@@ -1,0 +1,12 @@
+{% if articles %}
+  <h2 class="entity-group-title">{{ 'Articles'|t }}</h2>
+  <ul class="entity-article-list entity-list">
+    {% for article in articles %}
+      <li>
+        {% if article.display_name %}
+          <a href="/content/article?id={{ article.identifier }}">{{ article.display_name }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

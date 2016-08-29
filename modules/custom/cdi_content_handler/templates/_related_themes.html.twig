@@ -1,0 +1,10 @@
+{% if term_maps %}
+	<div class="entity-group">
+	  <h2 class="entity-group-title">{{ 'Related Themes'|t }}</h2>
+	  <ul class="entity-theme-list entity-list">
+	    {% for map in term_maps %}
+	      <li>{{ map.display_name }}</li>
+	    {% endfor %}
+	  </ul>
+	</div>
+{% endif %}

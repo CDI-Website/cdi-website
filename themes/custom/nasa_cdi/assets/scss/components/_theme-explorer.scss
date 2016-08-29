@@ -1,0 +1,131 @@
+/* =================================================================================
+Theme Explorer
+================================================================================= */
+
+// Controls
+.theme-explorer-controls {
+	background: $brand-secondary;
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	right: 15px;
+}
+
+.theme-explorer-controls-title {
+	color: $white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.theme-explorer-controls-item {
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.btn-control {
+	text-align: left;
+	width: 100%;
+
+	&:before {
+		font-family: $font-family-icon;
+		margin-right: 10px;
+	}
+
+	&.btn-center {
+		&:before {
+			content: '\f01e';
+		}
+	}
+
+	&.btn-zoom-in {
+		&:before {
+			content: '\f067';
+		}
+	}
+
+	&.btn-zoom-out {
+		&:before {
+			content: '\f068';
+		}
+	}
+}
+
+// Modal
+.modal-dialog {
+	width: calc( 100vw - 30px );
+	max-width: 1170px;
+}
+
+.theme-explorer-modal {
+	padding: 60px;
+	position: relative;
+
+	.page-header {
+		color: $gray;
+		margin-bottom: 5px;
+	}
+}
+
+.theme-explorer-modal-close {
+	background: $brand-secondary;
+	color: $white;
+	@include font-size( 24 );
+	padding: 10px;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+
+	&:before {
+		font-family: $font-family-icon;
+		content: '\f00d';
+	}
+}
+
+.entity-related-count {
+	margin-bottom: 15px;
+	text-align: center;
+
+	.js-counts {
+		color: $brand-secondary;
+		@include font-size( 32 );
+		padding-top: 60px;
+		position: relative;
+
+		&:before {
+			font-family: $font-family-entity-icon;
+			@include font-size( 64 );
+			
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX( -50% );
+		}
+
+		&.js-depth-assessments-count:before {
+			content: '\e910';
+		}
+
+		&.js-short-assessments-count:before {
+			content: '\e90b';
+		}
+
+		&.js-images-count:before {
+			content: '\e908';
+		}
+
+		&.js-data-count:before {
+			content: '\e90e';
+		}
+
+		&.js-resiliency-count:before {
+			content: '\e909';
+		}
+
+		&.js-others-count:before {
+			content: '\e910';
+		}
+	}
+}

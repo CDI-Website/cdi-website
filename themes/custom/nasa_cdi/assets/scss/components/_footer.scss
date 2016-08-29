@@ -1,0 +1,71 @@
+/* =================================================================================
+Footer
+================================================================================= */
+
+.footer {
+	background: $brand-primary;
+	color: $white;
+
+	.container {
+		padding: 25px 15px;
+		position: relative;
+
+		@media screen and (min-width: $screen-sm) {
+			padding: 45px 15px;
+		}
+	}
+
+	.region-footer {
+		@include make-row();
+	}
+}
+
+.footer .logo {
+	display: none;
+
+	@media screen and (min-width: $screen-sm) {
+		display: block;
+		@include make-sm-column( 3 );
+	}
+
+	@media screen and (min-width: $screen-md) {
+		@include make-sm-column( 2 );
+	}
+}
+
+.footer-nav {
+	@include make-sm-column( 3 );
+
+	li {
+		margin-bottom: 5px;
+	}
+
+	a {
+		color: $white;
+		font-family: $font-family-sans-serif-alt;
+		font-weight: bold;
+		@include font-size( 18 );
+
+		&:hover {
+			border-bottom: 2px solid $white;
+		}
+	}
+}
+
+.footer-address,
+.footer-phone {
+	@include make-sm-column( 3 );
+	@include font-size( 14 );
+
+	p {
+		margin: 0;
+		line-height: 1.6em;
+	}
+}
+
+@media screen and (max-width: $screen-sm) {
+	.footer-nav,
+	.footer-address {
+		margin-bottom: 15px;
+	}
+}

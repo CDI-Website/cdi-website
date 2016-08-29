@@ -1,0 +1,70 @@
+/* =================================================================================
+Explore the Data
+================================================================================= */
+
+.path-explore {
+	.theme-list {
+		margin-top: 45px;
+	}
+
+	.theme {
+		@include clearfix();
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+
+			.theme-external-links {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	.theme-link {
+		@media screen and (max-width: $screen-md) {
+			margin: 0 15px 15px;
+			text-align: center;
+			width: calc( 100% - 30px );
+		}
+
+		@media screen and (min-width: $screen-md) {
+			box-shadow: none;
+			float: left;
+		}
+	}
+
+	.theme-external-links {
+		border-bottom: 2px solid $gray-lightest;
+		font-family: $font-family-sans-serif-alt;
+		@include font-size( 18 );
+		width: 100%;
+		
+		li {
+			line-height: 1.2;
+			margin-bottom: 10px;
+		}
+
+		span.ext {
+			background: none;
+			margin-left: 5px;
+
+			&:before {
+				color: $brand-primary;
+				content: '\f08e';
+				font-family: $font-family-icon;
+				@include font-size( 14 );
+			}
+		}
+
+		@media screen and (max-width: $screen-md) {
+			padding-bottom: 15px;
+		}
+
+		@media screen and (min-width: $screen-md) {
+			float: left;
+			min-height: 170px;
+			padding-left: 30px;
+			width: calc( 100% - 173px );
+		}
+	}
+}

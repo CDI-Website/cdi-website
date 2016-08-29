@@ -1,0 +1,128 @@
+/* =================================================================================
+Theme
+================================================================================= */
+
+.theme {
+	&:nth-child( 5n + 1 ) .theme-link {
+		background-color: $color-theme-green-light;
+		border-color: $color-theme-green-light;
+
+		&:hover {
+			background-color: lighten( $color-theme-green-light, 5% );
+			border-color: lighten( $color-theme-green-light, 5% );
+		}
+	}
+
+	&:nth-child( 5n + 2 ) .theme-link {
+		background-color: $color-theme-blue-light;
+		border-color: $color-theme-blue-light;
+
+		&:hover {
+			background-color: lighten( $color-theme-blue-light, 5% );
+			border-color: lighten( $color-theme-blue-light, 5% );
+		}
+	}
+
+	&:nth-child( 5n + 3 ) .theme-link {
+		background-color: $color-theme-green-dark;
+		border-color: $color-theme-green-dark;
+
+		&:hover {
+			background-color: lighten( $color-theme-green-dark, 5% );
+			border-color: lighten( $color-theme-green-dark, 5% );
+		}
+	}
+
+	&:nth-child( 5n + 4 ) .theme-link {
+		background-color: $color-theme-blue-dark;
+		border-color: $color-theme-blue-dark;
+
+		&:hover {
+			background-color: lighten( $color-theme-blue-dark, 5% );
+			border-color: lighten( $color-theme-blue-dark, 5% );
+		}
+	}
+
+	&:nth-child( 5n + 5 ) .theme-link {
+		background-color: $color-theme-orange;
+		border-color: $color-theme-orange;
+
+		&:hover {
+			background-color: lighten( $color-theme-orange, 5% );
+			border-color: lighten( $color-theme-orange, 5% );
+		}
+	}
+}
+
+.theme-link {
+	color: $white;
+	display: inline-block;
+	font-family: $font-family-sans-serif-alt;
+
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.theme-title {
+	display: block;
+}
+
+@media screen and (max-width: $screen-md) {
+	.theme-link {
+		border-width: 0;
+		@include font-size( 20 );
+		padding: 10px 15px;
+		position: relative;
+
+		&:before,
+		&:after {
+			border-top: 20px solid transparent;
+			border-bottom: 20px solid transparent;
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 0;
+			height: 0;
+		}
+
+		&:before {
+			border-right-color: inherit;
+			border-right-style: solid;
+			border-right-width: 10px;
+			left: -10px;
+		}
+
+		&:after {
+			border-left-color: inherit;
+			border-left-style: solid;
+			border-left-width: 10px;
+			right: -10px;
+		}
+
+		img {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+	.theme {
+		position: relative;
+	}
+
+	.theme-link {
+		@include hexagon( 150px );
+		text-align: center;
+	}
+
+	.theme-title {
+		@include font-size( 16 );
+		position: absolute;
+		top: 90px;
+		left: -5px;
+		width: calc( 100% + 10px );
+		z-index: $zindex-9;
+	}
+}
